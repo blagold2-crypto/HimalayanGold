@@ -4,8 +4,7 @@ import { Leaf, Sun, Moon } from 'lucide-react';
 const Navbar = () => {
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('theme');
-    if (saved) return saved;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return saved || 'dark';
   });
 
   useEffect(() => {
